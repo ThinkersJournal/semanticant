@@ -4,12 +4,12 @@ You own `C:\Projects\semanticant` (github.com/ThinkersJournal/semanticant, publi
 Sonnet only; never Opus. Primary stays on `main`; branches in worktrees (`C:\Projects\semanticant-wt-<topic>`).
 
 ## State (2026-11-18)
-Spec merged (PR #1). PM rulings: pack format text-first; `-value`/`-cues` split; MSRV 1.88; core hosts Reason/Verdict/Provenance/pack Manifest/Span/LangTag, stdlib only, no identifiers.
-Day 1 = `semanticant-core` ONLY, PR `core-day1` (worktree `semanticant-wt-core`): 11 tests, 7 sabotage mutations all red. Version 0.1.0 proposed; PM allocates at [READY] and publishes (siblings need it on crates.io).
+`semanticant-core` 0.1.0 merged and PUBLISHED (siblings depend on it). Day 2 = `semanticant-text` + deny.toml + CI job `deny`, PR `text-day2` (worktree `semanticant-wt-text`): 12 tests, 11 mutations red.
+Version: workspace 0.1.0 carried; PM allocates the next at gate. Branch protection requires msrv, test ubuntu, test windows: PM adds `deny`.
+Deviations from SPEC-STEP1 3.2 (told in PR): `fold(text, rules)` has no lang arg (tailoring is data in `FoldRules`); `sentences` returns `Vec<Verdict<Span>>`.
 
 ## Next
-Day 2 `semanticant-text` (after core merges/publishes), then pack loader, lexicon, value, cues (SPEC-STEP1 section 6). One PR per day.
-Delete merged branch + worktree per CLAUDE.md section 3.
+Day 3 `semanticant-pack` (loader: pack.toml parse + sha256 verify, text first) then `-lexicon`, `-value`, `-cues`. One PR per day. After merge: delete branch + worktree.
 
 ## Holds / WAITs
-WAIT: core PR merge | check: gh pr view 2 --json state,mergedAt | wake: 2026-11-19T12:00:00Z
+WAIT: text PR merge | check: gh pr view 3 --json state,mergedAt | wake: 2026-11-19T12:00:00Z
