@@ -4,12 +4,12 @@ You own `C:\Projects\semanticant` (github.com/ThinkersJournal/semanticant, publi
 Sonnet only; never Opus. Primary stays on `main`; branches in worktrees (`C:\Projects\semanticant-wt-<topic>`).
 
 ## State (2026-11-18)
-`semanticant-core` 0.1.0 merged and PUBLISHED (siblings depend on it). Day 2 = `semanticant-text` + deny.toml + CI job `deny`, PR `text-day2` (worktree `semanticant-wt-text`): 12 tests, 11 mutations red.
-Version: workspace 0.1.0 carried; PM allocates the next at gate. Branch protection requires msrv, test ubuntu, test windows: PM adds `deny`.
-Deviations from SPEC-STEP1 3.2 (told in PR): `fold(text, rules)` has no lang arg (tailoring is data in `FoldRules`); `sentences` returns `Vec<Verdict<Span>>`.
+`semanticant-core` 0.1.0 published. PR #3 (`text-day2`, worktree `semanticant-wt-text`) is DRAFT by PM HOLD (third PR of the UTC day): it now holds `-text`, `-pack`, deny job, version 0.1.1 + CHANGELOG.
+At 2026-11-19T00:00Z or later: `gh pr ready 3`, retitle to cover text+pack, send [READY]. ONE PR per day: fold the day's work into the open one, never a second.
+Deviations from SPEC 3.2: `fold(text, rules)` has no lang arg; `sentences` returns `Vec<Verdict<Span>>`. Symlink test in -pack is unix-only (runs on CI ubuntu).
 
 ## Next
-Day 3 `semanticant-pack` (loader: pack.toml parse + sha256 verify, text first) then `-lexicon`, `-value`, `-cues`. One PR per day. After merge: delete branch + worktree.
+After #3 is ready/merged: `-lexicon` (day 11-19 PR), then `-value`, `-cues`. PM adds job `deny` to protection after its first green run on main. After merge: delete branch + worktree.
 
 ## Holds / WAITs
-WAIT: text PR merge | check: gh pr view 3 --json state,mergedAt | wake: 2026-11-19T12:00:00Z
+WAIT: open #3 ready at UTC day change | check: gh pr view 3 --json state,isDraft | wake: 2026-11-19T00:05:00Z
