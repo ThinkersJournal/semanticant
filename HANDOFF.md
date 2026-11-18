@@ -11,4 +11,5 @@ After the spec PR merges: build the foundation tools per SPEC-STEP1 section 6 (c
 Anything beyond the four foundation tools waits for CireSnave to read the spec.
 
 ## Holds / WAITs
-WAIT: spec PR merge (check `gh pr view` yourself, then begin Day 1). Open [ASK]s are in SPEC-STEP1 section 8.
+WAIT: spec PR #1 merge | check: gh pr view 1 --json state,mergedAt | wake: 2026-11-18T20:47:23Z
+When merged: begin Day 1 (SPEC-STEP1 section 6). Open [ASK]s are in SPEC-STEP1 section 8.
