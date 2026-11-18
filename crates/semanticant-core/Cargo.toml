@@ -1,0 +1,17 @@
+[package]
+name = "semanticant-core"
+description = "Tiny shared types for SemanticAnt: Span, LangTag, Reason, Verdict, Provenance and the data-pack manifest. Standard library only."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords = ["semantics", "nlp", "provenance", "explainable"]
+categories = ["text-processing"]
+
+[lints]
+workspace = true
+
+[dependencies]

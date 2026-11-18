@@ -1,0 +1,15 @@
+[workspace]
+resolver = "2"
+members = ["crates/semanticant-core"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/ThinkersJournal/semanticant"
+authors = ["Eric Evans"]
+
+[workspace.lints.rust]
+unsafe_code = "forbid"
+missing_docs = "warn"

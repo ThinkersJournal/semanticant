@@ -1,15 +1,15 @@
 # HANDOFF: semanticant
 
-You own `C:\Projects\semanticant` (github.com/ThinkersJournal/semanticant, public). Read `C:\Projects\CLAUDE.md`, `docs/IDEAS-AND-DECISIONS-2026-11-18.md`, `docs/SPEC-SEED-2026-11-18.md`, `docs/SPEC-STEP1.md`.
+You own `C:\Projects\semanticant` (github.com/ThinkersJournal/semanticant, public). Read `C:\Projects\CLAUDE.md`, `docs/SPEC-STEP1.md`.
 Sonnet only; never Opus. Primary stays on `main`; branches in worktrees (`C:\Projects\semanticant-wt-<topic>`).
 
 ## State (2026-11-18)
-Spec PR (docs only, `spec-step1`, worktree `semanticant-wt-spec`) opened; the PM allocates the version at [READY].
+Spec merged (PR #1). PM rulings: pack format text-first; `-value`/`-cues` split; MSRV 1.88; core hosts Reason/Verdict/Provenance/pack Manifest/Span/LangTag, stdlib only, no identifiers.
+Day 1 = `semanticant-core` ONLY, PR `core-day1` (worktree `semanticant-wt-core`): 11 tests, 7 sabotage mutations all red. Version 0.1.0 proposed; PM allocates at [READY] and publishes (siblings need it on crates.io).
 
 ## Next
-After the spec PR merges: build the foundation tools per SPEC-STEP1 section 6 (core+text day 1, pack day 2, lexicon day 3, value day 4, cues day 5), one PR per day, red-first with sabotage.
-Anything beyond the four foundation tools waits for CireSnave to read the spec.
+Day 2 `semanticant-text` (after core merges/publishes), then pack loader, lexicon, value, cues (SPEC-STEP1 section 6). One PR per day.
+Delete merged branch + worktree per CLAUDE.md section 3.
 
 ## Holds / WAITs
-WAIT: spec PR #1 merge | check: gh pr view 1 --json state,mergedAt | wake: 2026-11-18T20:47:23Z
-When merged: begin Day 1 (SPEC-STEP1 section 6). Open [ASK]s are in SPEC-STEP1 section 8.
+WAIT: core PR merge | check: gh pr view 2 --json state,mergedAt | wake: 2026-11-19T12:00:00Z
