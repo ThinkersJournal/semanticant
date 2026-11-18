@@ -1,0 +1,19 @@
+[package]
+name = "semanticant-lexicon"
+description = "Sense-inventory interface and deterministic similarity/relatedness measures (string, token-set, taxonomy, caller-supplied embeddings) for SemanticAnt. Every score carries its reasons."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords = ["semantics", "nlp", "wordnet", "similarity", "lexicon"]
+categories = ["text-processing"]
+
+[lints]
+workspace = true
+
+[dependencies]
+semanticant-core = { version = "0.1.0", path = "../semanticant-core" }
+semanticant-pack = { version = "0.1.1", path = "../semanticant-pack" }
