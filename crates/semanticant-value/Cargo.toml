@@ -1,0 +1,21 @@
+[package]
+name = "semanticant-value"
+description = "Numbers (digits and spelled-out), units and quantities, dates and times parsed from text into canonical values, driven by data packs. Ambiguity returns every reading with its reasons."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords = ["semantics", "nlp", "quantities", "units", "dates"]
+categories = ["text-processing", "parser-implementations"]
+
+[lints]
+workspace = true
+
+[dependencies]
+semanticant-core = { version = "0.1.0", path = "../semanticant-core" }
+semanticant-pack = { version = "0.1.1", path = "../semanticant-pack" }
+rust_decimal = { version = "1.43.0", default-features = false, features = ["std"] }
+jiff = { version = "1.0.1", default-features = false, features = ["std"] }
