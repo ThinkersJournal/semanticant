@@ -1,9 +1,9 @@
 [workspace]
 resolver = "2"
-members = ["crates/semanticant-core"]
+members = ["crates/semanticant-core", "crates/semanticant-text", "crates/semanticant-pack", "crates/semanticant-lexicon"]
 
 [workspace.package]
-version = "0.1.0"
+version = "0.1.1"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"

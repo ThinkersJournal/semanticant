@@ -1,0 +1,20 @@
+[package]
+name = "semanticant-text"
+description = "Text normalisation, case folding, tokenisation and sentence segmentation for SemanticAnt: language-tagged, rule-data driven, offsets always point into the original text."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords = ["semantics", "nlp", "tokenizer", "unicode", "segmentation"]
+categories = ["text-processing"]
+
+[lints]
+workspace = true
+
+[dependencies]
+semanticant-core = { version = "0.1.0", path = "../semanticant-core" }
+unicode-normalization = "0.1.26"
+unicode-segmentation = "1.13.3"

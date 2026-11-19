@@ -1,0 +1,20 @@
+[package]
+name = "semanticant-pack"
+description = "Loader for SemanticAnt data packs: parses pack.toml, verifies every file's SHA-256, refuses packs without a licence and source."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords = ["semantics", "nlp", "data-pack", "checksum", "provenance"]
+categories = ["text-processing", "parser-implementations"]
+
+[lints]
+workspace = true
+
+[dependencies]
+semanticant-core = { version = "0.1.0", path = "../semanticant-core" }
+sha2 = "0.11.1"
+toml = "1.2.1"
