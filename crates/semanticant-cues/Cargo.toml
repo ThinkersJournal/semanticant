@@ -1,0 +1,20 @@
+[package]
+name = "semanticant-cues"
+description = "Negation, modality and hedge cue detection with scope for SemanticAnt: cue lists, scope windows and terminators are data packs, every cue carries the reason its scope ended."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+readme = "README.md"
+keywords = ["semantics", "nlp", "negation", "hedging", "modality"]
+categories = ["text-processing"]
+
+[lints]
+workspace = true
+
+[dependencies]
+semanticant-core = { version = "0.1.0", path = "../semanticant-core" }
+semanticant-pack = { version = "0.1.1", path = "../semanticant-pack" }
+semanticant-text = { version = "0.1.1", path = "../semanticant-text" }

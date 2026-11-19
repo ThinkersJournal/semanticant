@@ -378,6 +378,15 @@ name = "semanticant-core"
 version = "0.1.2"
 
 [[package]]
+name = "semanticant-cues"
+version = "0.1.2"
+dependencies = [
+ "semanticant-core",
+ "semanticant-pack",
+ "semanticant-text",
+]
+
+[[package]]
 name = "semanticant-lexicon"
 version = "0.1.2"
 dependencies = [
