@@ -1,0 +1,33 @@
+# English number words. Self-authored for semanticant.
+zero	unit	0
+one	unit	1
+two	unit	2
+three	unit	3
+four	unit	4
+five	unit	5
+six	unit	6
+seven	unit	7
+eight	unit	8
+nine	unit	9
+ten	unit	10
+eleven	unit	11
+twelve	unit	12
+thirteen	unit	13
+fourteen	unit	14
+fifteen	unit	15
+sixteen	unit	16
+seventeen	unit	17
+eighteen	unit	18
+nineteen	unit	19
+twenty	tens	20
+thirty	tens	30
+forty	tens	40
+fifty	tens	50
+sixty	tens	60
+seventy	tens	70
+eighty	tens	80
+ninety	tens	90
+hundred	scale	100
+thousand	scale	1000
+million	scale	1000000
+and	connector

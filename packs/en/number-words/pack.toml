@@ -1,0 +1,14 @@
+schema = 1
+name = "en-number-words"
+version = "0.1.2"
+kind = "number-words"
+lang = "en"
+
+[provenance]
+source = "self-authored for semanticant"
+licence = "MIT OR Apache-2.0"
+credit = "semanticant contributors"
+
+[[files]]
+name = "words.tsv"
+sha256 = "95ca5e3921cee61d5103d040d4da139aa14c3822bb1c8dba60cca662e92ccb86"

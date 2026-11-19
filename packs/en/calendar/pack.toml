@@ -1,0 +1,22 @@
+schema = 1
+name = "en-calendar"
+version = "0.1.2"
+kind = "calendar"
+lang = "en"
+
+[provenance]
+source = "self-authored for semanticant"
+licence = "MIT OR Apache-2.0"
+credit = "semanticant contributors"
+
+[[files]]
+name = "months.tsv"
+sha256 = "b76aa1a37c494be1ac227c8b915e4e05e5f6d4f92d57b6ede2959ab3a7f4d7e0"
+
+[[files]]
+name = "ordinals.tsv"
+sha256 = "5e37b97eb7f0bb6bfbf381ff50a8e4f44454795d5dd3641449566d4c0cbbe26a"
+
+[[files]]
+name = "meridiem.tsv"
+sha256 = "f461d8bedcba8f7535d7b6dd974dd77a7e71c0dc81a0e1ed4791bb2df32369f6"

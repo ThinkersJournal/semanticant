@@ -1,0 +1,24 @@
+# phrase, kind, direction, window (tokens), strength. Self-authored; after the NegEx idea, no text copied.
+not	negation	forward	4	1.0
+no	negation	forward	4	1.0
+never	negation	forward	4	1.0
+without	negation	forward	4	1.0
+no evidence of	negation	forward	5	1.0
+denies	negation	forward	4	0.9
+denied	negation	forward	4	0.9
+absence of	negation	forward	4	0.9
+free of	negation	forward	3	0.8
+ruled out	negation	backward	3	0.9
+is absent	negation	backward	3	0.9
+may	modality	forward	3	0.5
+might	modality	forward	3	0.5
+could	modality	forward	3	0.5
+must	modality	forward	3	1.0
+should	modality	forward	3	0.7
+possibly	hedge	forward	3	0.5
+probably	hedge	forward	3	0.7
+perhaps	hedge	forward	3	0.5
+suggests	hedge	forward	5	0.6
+appears to	hedge	forward	4	0.6
+seems	hedge	forward	4	0.6
+likely	hedge	forward	3	0.7
