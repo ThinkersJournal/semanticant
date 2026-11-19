@@ -34,3 +34,41 @@ fn english_cue_pack_works() {
 fn rules_toks(t: &str) -> Vec<semanticant_text::Token> {
     UaxSegmenter::new().tokens(t, &LangTag::parse("en").unwrap())
 }
+
+fn load(rel: &str) -> CueRules {
+    let dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"))
+        .join("../../packs")
+        .join(rel);
+    CueRules::from_pack(&Pack::open(&dir).unwrap()).unwrap()
+}
+
+#[test]
+fn german_and_rust_doc_packs_use_the_same_engine() {
+    let de = load("de/cues");
+    let t = "Es gibt keine Hinweise, aber Schmerzen bleiben.";
+    let f = find_cues(&rules_toks(t), &de);
+    let neg: Vec<_> = f
+        .iter()
+        .filter(|v| v.value.kind == CueKind::Negation)
+        .collect();
+    assert_eq!(neg.len(), 1);
+    let scope = neg[0].value.scope.unwrap().slice(t).unwrap();
+    assert!(
+        scope.contains("Hinweise") && !scope.contains("Schmerzen"),
+        "{scope:?}"
+    );
+
+    let rd = load("rust-doc/cues");
+    let t = "This function must not be called twice, unless reset first.";
+    let f = find_cues(&rules_toks(t), &rd);
+    let neg: Vec<_> = f
+        .iter()
+        .filter(|v| v.value.kind == CueKind::Negation)
+        .collect();
+    assert_eq!(neg.len(), 1);
+    let scope = neg[0].value.scope.unwrap().slice(t).unwrap();
+    assert!(
+        scope.contains("called") && !scope.contains("reset"),
+        "{scope:?}"
+    );
+}

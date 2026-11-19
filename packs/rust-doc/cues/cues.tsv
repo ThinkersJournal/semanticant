@@ -1,0 +1,13 @@
+# Cues for Rust API doc comments. Self-authored.
+never	negation	forward	4	1.0
+must not	negation	forward	4	1.0
+does not	negation	forward	4	1.0
+not	negation	forward	4	1.0
+without	negation	forward	4	1.0
+must	modality	forward	4	1.0
+should	modality	forward	4	0.7
+may panic	hedge	forward	4	0.7
+may	modality	forward	3	0.5
+unspecified	hedge	forward	3	0.6
+TODO	hedge	forward	6	0.4
+FIXME	hedge	forward	6	0.4

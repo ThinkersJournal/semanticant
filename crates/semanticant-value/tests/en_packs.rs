@@ -50,3 +50,15 @@ fn tampered_pack_is_refused() {
     assert!(Pack::open(&dst).is_err(), "one flipped byte is refused");
     std::fs::remove_dir_all(&dst).unwrap();
 }
+
+#[test]
+fn german_calendar_pack_reads_german_dates() {
+    let dir = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../packs/de/calendar");
+    let cal = CalendarRules::from_pack(&Pack::open(&dir).unwrap()).unwrap();
+    let d = parse_dates("am 3. März 2026", &cal);
+    assert!(!d.is_empty(), "German month name and day");
+    assert!(
+        parse_dates("on 3 March 2026", &cal).is_empty(),
+        "English month is not in the German pack"
+    );
+}

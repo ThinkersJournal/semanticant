@@ -10,7 +10,7 @@ Worktree `C:\Projects\semanticant-wt-value`, branch `value-day4` (pushed, NO PR)
 Open the ONE PR for 2026-11-20 only at/after 2026-11-20T00:00Z (`gh pr create`), then [READY]. Both -value and -cues go in that ONE PR (workspace 0.1.2; PM allocates).
 
 ## Next
-English language packs under `packs/` with real checksums (self-authored, MIT OR Apache-2.0) so the crates ship usable data. Real packs for number-words, units, calendar, cues (English first, a second language and Rust docs to show the engine is language-free). A phrase in a pack cannot start with `#` (comment rule): note in RULES.
+DONE on value-day4: packs/en (number-words, units, calendar, cues), packs/de (calendar, cues), packs/rust-doc/cues, all with checksums and load tests; `.gitattributes` keeps packs byte-exact. Remaining before the PR: Rust docs for the packs (README note), `cargo deny`, then open the ONE PR at/after 2026-11-20T00:00Z and send [READY]. A phrase in a pack cannot start with `#`.
 
 ## Holds / WAITs
 WAIT: open the day's PR | check: git ls-remote --heads origin value-day4 | wake: 2026-11-20T00:05:00Z
