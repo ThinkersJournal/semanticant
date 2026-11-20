@@ -4,6 +4,7 @@ One version for the whole project. Pre-1.0: a breaking change bumps the second n
 
 ## Unreleased
 
+- `easyants-card.toml` and `examples/quickstart.rs` (built by CI through the unpublished `semanticant-examples` crate); README states the real publish status.
 - Added `LeacockChodorow` (normalised to [0, 1]) to `semanticant-lexicon`'s taxonomy measures.
 
 ## 0.1.2
