@@ -1,0 +1,7 @@
+name = "SemanticAnt"
+sentence = "Semantics tools: text, packs, similarity, numbers, dates and negation cues, with a reason on every result."
+status = "ready"
+install_url = "https://crates.io/crates/semanticant-value"
+install_snippet = "cargo add semanticant-value semanticant-pack"
+docs = "https://github.com/ThinkersJournal/semanticant"
+example_path = "examples/quickstart.rs"

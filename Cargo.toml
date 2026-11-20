@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["crates/semanticant-core", "crates/semanticant-text", "crates/semanticant-pack", "crates/semanticant-lexicon", "crates/semanticant-value", "crates/semanticant-cues"]
+members = ["crates/semanticant-core", "crates/semanticant-text", "crates/semanticant-pack", "crates/semanticant-lexicon", "crates/semanticant-value", "crates/semanticant-cues", "crates/semanticant-examples"]
 
 [workspace.package]
 version = "0.1.2"

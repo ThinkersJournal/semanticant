@@ -1,0 +1,21 @@
+[package]
+name = "semanticant-examples"
+description = "Builds the runnable examples under /examples so CI keeps them compiling. Not published."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+publish = false
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[dev-dependencies]
+semanticant-pack = { version = "0.1.2", path = "../semanticant-pack" }
+semanticant-value = { version = "0.1.2", path = "../semanticant-value" }
+
+[[example]]
+name = "quickstart"
+path = "../../examples/quickstart.rs"

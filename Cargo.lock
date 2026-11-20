@@ -387,6 +387,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "semanticant-examples"
+version = "0.1.2"
+dependencies = [
+ "semanticant-pack",
+ "semanticant-value",
+]
+
+[[package]]
 name = "semanticant-lexicon"
 version = "0.1.2"
 dependencies = [

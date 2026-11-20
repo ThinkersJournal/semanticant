@@ -2,9 +2,8 @@
 
 Comprehensive tool libraries covering the whole field of semantics and semantic analysis.
 
-**Status: step 1 is built in this repository; only `semanticant-core` is on crates.io (0.1.0).** The crates `semanticant-text`, `-pack`, `-lexicon`,
-`-value` and `-cues` (version 0.1.2 in this workspace) are NOT yet published; a published version is claimed here only after it is. The name
-`semanticant` is reserved on crates.io at 0.0.0. Design and decisions: `docs/SPEC-STEP1.md`; changes: `CHANGELOG.md`; data packs: `packs/README.md`.
+**Status: step 1 is built and all six crates are published on crates.io at 0.1.2 (2026-11-20, tag `v0.1.2`).** The name
+`semanticant` is reserved at 0.0.0. Design and decisions: `docs/SPEC-STEP1.md`; changes: `CHANGELOG.md` (entries under "Unreleased" are on `main` but not yet published); data packs: `packs/README.md`.
 
 | Crate | Does |
 |---|---|
