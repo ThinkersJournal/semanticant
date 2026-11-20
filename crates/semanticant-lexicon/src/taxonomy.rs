@@ -159,6 +159,27 @@ impl Measure<SenseId> for Resnik<'_> {
     }
 }
 
+/// Jiang-Conrath with intrinsic IC: distance `IC(a) + IC(b) - 2 * IC(lcs)`, scored as `1 / (1 + distance)`. Range `(0, 1]`; equal senses score 1.
+pub struct JiangConrath<'a>(pub &'a dyn SenseInventory);
+
+impl Measure<SenseId> for JiangConrath<'_> {
+    fn score(&self, a: &SenseId, b: &SenseId) -> Verdict<f64> {
+        let inv = self.0;
+        let n = inv.all_senses().len();
+        match best_ic(inv, *a, *b, n) {
+            None => none("lexicon.taxonomy.no_common_ancestor", inv, *a, *b),
+            Some((s, ic)) => {
+                let dist =
+                    (intrinsic_ic(inv, *a, n) + intrinsic_ic(inv, *b, n) - 2.0 * ic).max(0.0);
+                Verdict::new(1.0 / (1.0 + dist)).because(Reason::new(
+                    "lexicon.taxonomy.jiang_conrath",
+                    format!("ancestor {} IC {ic:.4}; distance {dist:.4}", key_of(inv, s)),
+                ))
+            }
+        }
+    }
+}
+
 impl Measure<SenseId> for Lin<'_> {
     fn score(&self, a: &SenseId, b: &SenseId) -> Verdict<f64> {
         let inv = self.0;

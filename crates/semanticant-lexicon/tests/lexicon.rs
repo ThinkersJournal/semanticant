@@ -248,6 +248,30 @@ fn taxonomy_information_content() {
 }
 
 #[test]
+fn jiang_conrath_distance_and_similarity() {
+    let i = inv();
+    let (dog, cat, tree, rock) = (id(&i, "dog"), id(&i, "cat"), id(&i, "tree"), id(&i, "rock"));
+    let n = 7f64;
+    let ic = |d: f64| 1.0 - (d + 1.0).ln() / n.ln();
+    let (ic_dog, ic_cat, ic_tree, ic_animal, ic_entity) =
+        (ic(0.0), ic(0.0), ic(0.0), ic(2.0), ic(5.0));
+    let j = JiangConrath(&i);
+    close(
+        j.score(&dog, &cat).value,
+        1.0 / (1.0 + ic_dog + ic_cat - 2.0 * ic_animal),
+    );
+    close(
+        j.score(&dog, &tree).value,
+        1.0 / (1.0 + ic_dog + ic_tree - 2.0 * ic_entity),
+    );
+    close(j.score(&dog, &dog).value, 1.0);
+    assert!(j.score(&dog, &cat).value > j.score(&dog, &tree).value);
+    let v = j.score(&dog, &rock);
+    close(v.value, 0.0);
+    assert_eq!(v.reasons[0].rule, "lexicon.taxonomy.no_common_ancestor");
+}
+
+#[test]
 fn cyclic_hypernyms_terminate() {
     let i = InMemoryInventory::from_pack(&pack(
         "lexicon",

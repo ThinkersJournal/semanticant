@@ -11,6 +11,6 @@ mod vectors;
 pub use inventory::{InMemoryInventory, InventoryError, Relation, SenseId, SenseInventory};
 pub use measure::Measure;
 pub use strings::{Dice, JaroWinkler, Levenshtein};
-pub use taxonomy::{Lin, PathSimilarity, Resnik, WuPalmer};
+pub use taxonomy::{JiangConrath, Lin, PathSimilarity, Resnik, WuPalmer};
 pub use tokens::{Containment, Jaccard, Overlap};
 pub use vectors::{Cosine, Embedder};

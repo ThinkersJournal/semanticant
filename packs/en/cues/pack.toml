@@ -1,0 +1,22 @@
+schema = 1
+name = "en-cues"
+version = "0.1.2"
+kind = "cues"
+lang = "en"
+
+[provenance]
+source = "self-authored for semanticant"
+licence = "MIT OR Apache-2.0"
+credit = "semanticant contributors"
+
+[[files]]
+name = "cues.tsv"
+sha256 = "89c1c63e1cd3ae01e0da602c758e4d372b00041586e713845a9eae805cea6dde"
+
+[[files]]
+name = "terminators.tsv"
+sha256 = "ff1a25b443daeda30f49826c6738227d4933c04955cb9f7076fca0868c488952"
+
+[[files]]
+name = "pseudo.tsv"
+sha256 = "1c866735191069875f348b999cdafcefe89bcbe640e9faec5b73cc81175d89e3"

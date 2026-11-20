@@ -1,0 +1,21 @@
+schema = 1
+name = "rust-doc-cues"
+version = "0.1.2"
+kind = "cues"
+
+[provenance]
+source = "self-authored for semanticant"
+licence = "MIT OR Apache-2.0"
+credit = "semanticant contributors"
+
+[[files]]
+name = "cues.tsv"
+sha256 = "e0df4667e6d2c83b4eb789c3359c04b4afc3c87dd048932055a8355738e24ca6"
+
+[[files]]
+name = "terminators.tsv"
+sha256 = "61094aff1da71bd3da16469b9059cd413d9039ea96637c1e1084726e1641f415"
+
+[[files]]
+name = "pseudo.tsv"
+sha256 = "b063339015a303882b6697a3998094b417e659770accfea14545755564f6fbec"

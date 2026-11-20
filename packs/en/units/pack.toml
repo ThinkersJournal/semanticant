@@ -1,0 +1,14 @@
+schema = 1
+name = "en-units"
+version = "0.1.2"
+kind = "units"
+lang = "en"
+
+[provenance]
+source = "self-authored for semanticant"
+licence = "MIT OR Apache-2.0"
+credit = "semanticant contributors"
+
+[[files]]
+name = "units.tsv"
+sha256 = "dc3a1d0bd542f3cea40f1b4cae75c8c36201027c8d460830bc75530f0f6d1f7a"
