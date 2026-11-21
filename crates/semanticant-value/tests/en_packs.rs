@@ -70,7 +70,7 @@ fn french_calendar_pack_reads_french_dates() {
     let ymd = |t: &str| {
         let d = parse_dates(t, &cal);
         assert_eq!(d.len(), 1, "{t}");
-        let r = d[0].readings[0].value.clone();
+        let r = d[0].readings[0].value;
         (r.year, r.month, r.day)
     };
     assert_eq!(ymd("le 3 mars 2026"), (Some(2026), Some(3), Some(3)));
