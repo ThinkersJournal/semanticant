@@ -272,6 +272,21 @@ fn jiang_conrath_distance_and_similarity() {
 }
 
 #[test]
+fn leacock_chodorow_normalised() {
+    let i = inv();
+    let (dog, cat, tree, rock) = (id(&i, "dog"), id(&i, "cat"), id(&i, "tree"), id(&i, "rock"));
+    let l = LeacockChodorow(&i);
+    let top = 6f64.ln(); // 2 * max depth (3)
+    close(l.score(&dog, &dog).value, 1.0);
+    close(l.score(&dog, &cat).value, 1.0 - 3f64.ln() / top);
+    close(l.score(&dog, &tree).value, 1.0 - 5f64.ln() / top);
+    assert!(l.score(&dog, &cat).value > l.score(&dog, &tree).value);
+    let v = l.score(&dog, &rock);
+    close(v.value, 0.0);
+    assert_eq!(v.reasons[0].rule, "lexicon.taxonomy.no_common_ancestor");
+}
+
+#[test]
 fn cyclic_hypernyms_terminate() {
     let i = InMemoryInventory::from_pack(&pack(
         "lexicon",

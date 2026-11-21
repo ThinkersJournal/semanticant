@@ -180,6 +180,36 @@ impl Measure<SenseId> for JiangConrath<'_> {
     }
 }
 
+/// Leacock-Chodorow, normalised to `[0, 1]`: `1 - ln(p) / ln(2 * D)` where `p` is the node count of the shortest path
+/// between the senses (itself = 1) and `D` is the greatest depth of any sense in the inventory (a root is 1).
+pub struct LeacockChodorow<'a>(pub &'a dyn SenseInventory);
+
+impl Measure<SenseId> for LeacockChodorow<'_> {
+    fn score(&self, a: &SenseId, b: &SenseId) -> Verdict<f64> {
+        let inv = self.0;
+        let (aa, ab) = (ancestors(inv, *a), ancestors(inv, *b));
+        let Some(edges) = aa
+            .iter()
+            .filter_map(|(s, da)| ab.get(s).map(|db| da + db))
+            .min()
+        else {
+            return none("lexicon.taxonomy.no_common_ancestor", inv, *a, *b);
+        };
+        let max_depth = inv
+            .all_senses()
+            .into_iter()
+            .map(|s| depth(inv, s))
+            .max()
+            .unwrap_or(1);
+        let p = (edges + 1) as f64;
+        let v = (1.0 - p.ln() / (2.0 * max_depth as f64).ln()).clamp(0.0, 1.0);
+        Verdict::new(v).because(Reason::new(
+            "lexicon.taxonomy.leacock_chodorow",
+            format!("path of {} nodes; greatest depth {max_depth}", edges + 1),
+        ))
+    }
+}
+
 impl Measure<SenseId> for Lin<'_> {
     fn score(&self, a: &SenseId, b: &SenseId) -> Verdict<f64> {
         let inv = self.0;

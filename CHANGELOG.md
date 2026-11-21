@@ -2,6 +2,11 @@
 
 One version for the whole project. Pre-1.0: a breaking change bumps the second number.
 
+## 0.1.3
+
+- `easyants-card.toml` and `examples/quickstart.rs` (built by CI through the unpublished `semanticant-examples` crate); README states the real publish status.
+- Added `LeacockChodorow` (normalised to [0, 1]) to `semanticant-lexicon`'s taxonomy measures.
+
 ## 0.1.2
 
 - `packs/en/`: self-authored English packs (number-words, units, calendar, cues) with real checksums; `.gitattributes` keeps them byte-exact. Tests load them, and a flipped byte is refused.
