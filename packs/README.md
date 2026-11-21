@@ -7,7 +7,7 @@ Data-only language packs loaded by `semanticant-pack`. Layout: `packs/<lang>/<na
 |------|---------|
 | `en/number-words`, `en/units`, `en/calendar` | `semanticant-value` |
 | `de/calendar`, `fr/calendar` | `semanticant-value` |
-| `en/cues`, `de/cues`, `rust-doc/cues` | `semanticant-cues` |
+| `en/cues`, `de/cues`, `fr/cues`, `rust-doc/cues` | `semanticant-cues` |
 
 Rules: a phrase in a pack cannot start with `#` (comment marker). Packs are byte-exact
 (`.gitattributes` disables line-ending conversion); editing a data file requires updating the

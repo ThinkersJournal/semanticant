@@ -5,6 +5,7 @@ One version for the whole project. Pre-1.0: a breaking change bumps the second n
 ## Unreleased
 
 - `packs/fr/calendar/`: French month names and ordinal suffixes (self-authored, checksummed), with a load test that checks the parsed year, month and day.
+- `packs/fr/cues/`: French negation, modality and hedge cues with terminators and pseudo-cues (self-authored, checksummed), with a scope-and-suppression load test.
 
 ## 0.1.3
 

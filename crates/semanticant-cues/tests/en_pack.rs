@@ -72,3 +72,26 @@ fn german_and_rust_doc_packs_use_the_same_engine() {
         "{scope:?}"
     );
 }
+
+#[test]
+fn french_cue_pack_scopes_and_suppresses() {
+    let fr = load("fr/cues");
+    let t = "Il y a aucune fracture mais douleur persiste.";
+    let f = find_cues(&rules_toks(t), &fr);
+    let neg: Vec<_> = f
+        .iter()
+        .filter(|v| v.value.kind == CueKind::Negation)
+        .collect();
+    assert_eq!(neg.len(), 1);
+    let scope = neg[0].value.scope.unwrap().slice(t).unwrap();
+    assert!(
+        scope.contains("fracture") && !scope.contains("douleur"),
+        "{scope:?}"
+    );
+    let t2 = "Pas de changement notable.";
+    let f2 = find_cues(&rules_toks(t2), &fr);
+    assert!(
+        !f2.is_empty() && f2.iter().all(|v| v.value.suppressed),
+        "`pas de changement` is a pseudo-cue"
+    );
+}

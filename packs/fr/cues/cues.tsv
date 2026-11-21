@@ -1,0 +1,13 @@
+# phrase, kind, direction, window, strength. Self-authored.
+pas	negation	forward	4	1.0
+aucun	negation	forward	4	1.0
+aucune	negation	forward	4	1.0
+sans	negation	forward	4	1.0
+jamais	negation	forward	4	1.0
+absence de	negation	forward	5	1.0
+peut	modality	forward	3	0.5
+doit	modality	forward	3	1.0
+faut	modality	forward	3	0.7
+peut-être	hedge	forward	3	0.5
+probablement	hedge	forward	3	0.7
+semble	hedge	forward	4	0.6
