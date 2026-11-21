@@ -1,0 +1,18 @@
+schema = 1
+name = "fr-calendar"
+version = "0.1.3"
+kind = "calendar"
+lang = "fr"
+
+[provenance]
+source = "self-authored for semanticant"
+licence = "MIT OR Apache-2.0"
+credit = "semanticant contributors"
+
+[[files]]
+name = "months.tsv"
+sha256 = "070af62520d623beaa3835219bf7b6788798b76ea5e7494c5db9e2fdd599b93c"
+
+[[files]]
+name = "ordinals.tsv"
+sha256 = "639816bf7a5e80c4721efdff9cb0a699c99d5787043b4f00931eb2bede71e6a1"

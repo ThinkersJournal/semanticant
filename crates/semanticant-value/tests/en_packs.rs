@@ -62,3 +62,22 @@ fn german_calendar_pack_reads_german_dates() {
         "English month is not in the German pack"
     );
 }
+
+#[test]
+fn french_calendar_pack_reads_french_dates() {
+    let dir = PathBuf::from(env!("CARGO_MANIFEST_DIR")).join("../../packs/fr/calendar");
+    let cal = CalendarRules::from_pack(&Pack::open(&dir).unwrap()).unwrap();
+    let ymd = |t: &str| {
+        let d = parse_dates(t, &cal);
+        assert_eq!(d.len(), 1, "{t}");
+        let r = d[0].readings[0].value.clone();
+        (r.year, r.month, r.day)
+    };
+    assert_eq!(ymd("le 3 mars 2026"), (Some(2026), Some(3), Some(3)));
+    assert_eq!(ymd("le 1er janvier 2026"), (Some(2026), Some(1), Some(1)));
+    assert_eq!(ymd("le 14 août 2026"), (Some(2026), Some(8), Some(14)));
+    assert!(
+        parse_dates("on 3 March 2026", &cal).is_empty(),
+        "English month is not in the French pack"
+    );
+}

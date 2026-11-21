@@ -6,7 +6,7 @@ Data-only language packs loaded by `semanticant-pack`. Layout: `packs/<lang>/<na
 | Pack | Used by |
 |------|---------|
 | `en/number-words`, `en/units`, `en/calendar` | `semanticant-value` |
-| `de/calendar` | `semanticant-value` |
+| `de/calendar`, `fr/calendar` | `semanticant-value` |
 | `en/cues`, `de/cues`, `rust-doc/cues` | `semanticant-cues` |
 
 Rules: a phrase in a pack cannot start with `#` (comment marker). Packs are byte-exact

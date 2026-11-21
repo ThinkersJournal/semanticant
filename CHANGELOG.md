@@ -2,6 +2,10 @@
 
 One version for the whole project. Pre-1.0: a breaking change bumps the second number.
 
+## Unreleased
+
+- `packs/fr/calendar/`: French month names and ordinal suffixes (self-authored, checksummed), with a load test that checks the parsed year, month and day.
+
 ## 0.1.3
 
 - `easyants-card.toml` and `examples/quickstart.rs` (built by CI through the unpublished `semanticant-examples` crate); README states the real publish status.
