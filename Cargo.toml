@@ -3,7 +3,7 @@ resolver = "2"
 members = ["crates/semanticant-core", "crates/semanticant-text", "crates/semanticant-pack", "crates/semanticant-lexicon", "crates/semanticant-value", "crates/semanticant-cues", "crates/semanticant-examples"]
 
 [workspace.package]
-version = "0.1.2"
+version = "0.1.3"
 edition = "2024"
 rust-version = "1.88"
 license = "MIT OR Apache-2.0"
